@@ -22,7 +22,8 @@ add launch.sh /
 run chmod +x /launch.sh && \
     apt-get clean && \
     sed -i "s|#node_auto_indexing|node_auto_indexing|g" /var/lib/neo4j/conf/neo4j.properties && \
-    sed -i "s|#node_keys_indexable|node_keys_indexable|g" /var/lib/neo4j/conf/neo4j.properties && \ 
+    sed -i "s|#node_keys_indexable|node_keys_indexable|g" /var/lib/neo4j/conf/neo4j.properties && \
+    sed -i "s|dbms.security.auth_enabled=true|dbms.security.auth_enabled=false|g" /var/lib/neo4j/conf/neo4j.properties && \
     echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties
 
 # expose REST and shell server ports
